@@ -1,0 +1,132 @@
+V3 execution decisions before E1, 2026-10-30 America/New_York
+
+Scope: E0, E1(D1), E2, then E4 with local staged Markdown reports.
+E3(D2) skipped by user. E5 depends on E3 and is deferred. Optional E4d/A1
+and later E6-E9 are not counted as completed by this initial main-line goal.
+Original v2 inputs/code/results stay immutable. Original v3 proposal snapshot retained.
+
+Panel: start with ten available small checkpoints covering Qwen .8/2/4B,
+LFM1.2B, MiniCPM2B, Granite3B, SmolLM3, Phi4mini, GemmaE2 and Ministral3.
+Expand with native hybrid models if needed for six usable E4 models and coverage.
+Gated inaccessible checkpoints are recorded and skipped without bypassing access.
+7-14B/stage panels remain a later extension; do not claim the full proposal panel ran.
+Download pinned BF16 native checkpoints; rotate only completed, backed-up, unneeded
+weights when storage needs it. Preserve at least12GiB free. No generated probability
+reports from focal models. API only for auxiliary material needs if they arise.
+
+E0 admission under the user's explicit allowance to loosen quality thresholds:
+- R0 operational: median full-vocabulary q>=.70; first-letter format>=.90 on50;
+  greedy-direction concordance>=.85 on200. Keep original .90/.95/.90 side by side.
+- Slot/mean-absolute-singleton ratio<=1.0, ASI CI halfwidth<=.20, saturation<=.40,
+  and R0/R1 primary-weight gap<=.25 are reported applicability flags, not automatic
+  exclusion for scientifically unusual responses. Original v2 metrics also reported.
+- Both w_same and w_diff directions: report exact signs; if either estimate is in
+  [-.10,.10], call sign indeterminate instead of rejecting a near-zero estimate.
+  Clear opposite nontrivial signs or large gaps trigger R1-primary qualification
+  with readout-specific results, rather than hiding the model.
+- Do not require positive single-person influence, desired C, ASI significance,
+  normative Bayes behavior, or a particular aggregation type for admission.
+- Original singleton forward/reverse correlation is structurally identical;
+  retain as a marked uninformative statistic, not evidence of independent reliability.
+- Rescue sequence once on development data: original, then T2 instruction,
+  then T2 plus assistant '(' prefill. Choose earliest workable variant by format/q,
+  not E1 effects. No A/B masking or q renormalization. R1 full sentences use T2
+  without the letter-specific '('; record each actual prompt identity.
+- Models with persistently unusable R0 retain R1-only exploratory E1 results if
+  candidate scoring is valid. They do not silently enter R0 E4 caches.
+
+Numerics: BF16. Start batch1/eager. Before E1 choose a common faster batch (up to16)
+using fixed pilot numerical/throughput comparisons, recording changes and memory.
+This is an explicitly permitted v3 numerical amendment, not an unchanged-v2 claim.
+Never mix outputs within one run. If old20 cannot bridge to new execution, re-score
+them only for descriptive completeness. They remain excluded from confirmation.
+
+E1: full200 R0 and semantic64 full32 R1 for core panel. For Qwen4/LFM, primary
+confirmation uses untouched180; matching R0/R1 confirmation uses untouched44.
+All200/64 combined estimates for these two are descriptive. New-model main samples
+are200/64. Slot/label averaging precedes exact Mobius. C uses the proposal formula,
+ratio of aggregate numerator to aggregate mean absolute opponent singleton effect.
+Four rules use only alpha and singletons; no multi-person outcome fitting:
+add=sum(v); all_mean=mean(present v); side_mean=sum of mean(v) per nonempty stance
+side; side_max=sum of signed largest-|v| effect per nonempty stance side (tie role
+order). Compare Delta=y-alpha over subsets size>=2; within-item-centered R2 primary,
+pooled R2 secondary. All participants retain their preassigned stance roles even
+when an observed singleton influence has unexpected sign.
+E4 relation kernel per pair type: sum m(pair)/sum mean(abs(singletons of pair)).
+Topic-cluster bootstrap10000, all denominator failures reported. Pointwise intervals
+identified. Holm across the declared applicable-model hypothesis family. Prespecified
+v2 Qwen/LFM hypotheses may use fresh observations; new types classified by E1 are
+exploratory, not an independent test of the same C used to label them.
+
+E4 selection rule before E1: require Qwen4/LFM when usable. For other R0-usable
+models, choose four to cover available absolute-C quantiles (0,1/3,2/3,1), without replacement;
+nearest absolute C, then less-represented architecture/family, then fixed ID hash as tie-break.
+Do not require statistically significant or desired-sign C for selection. Refill
+unavailable slots by testing additional small checkpoints. Final IDs frozen after E1.
+R0-usable means operational R0 checks pass. R1_primary_R0_operational is eligible
+with its readout-disagreement flag retained; it is not silently removed from the
+quantile panel. Such models require readout-qualified claims. R1_only is ineligible.
+If a mandatory model lacks operational R0 or a finite estimable C, retain its
+unavailable/H1-unresolved record and fill remaining r=6-available_mandatory seats
+from the other eligible pool at r equally spaced |C| quantiles between0 and1,
+using the same tie rules. With both mandatory models available this is exactly
+the four usual quantiles. Fewer than six total eligible models triggers expansion,
+not a silently shortened frozen panel. This fallback was clarified before E1.
+E4 primary H2: U differences and paired prediction improvement PK vs P0 across
+projection-identical designs; report all outcomes including zero/negative improvement.
+Support for a directional improvement requires topic-cluster95% interval above0;
+H3 Spearman association reported with small-model-panel uncertainty and selection
+scope. Never treat the model-selection C range as an unbiased population sample.
+
+E2 amendments: E2a supplements the 5 named base conditions with necessary singles,
+pairs and empty baseline (16 low-order subsets) under each neutral background to
+identify conditional C. No unmeasured higher-order coefficients claimed. E2e has
+0..6 opponents plus0..3 allies, so use9slots consistently; six cyclic orders do not
+give full9-position balance. Count-grid conditions do not imply full named lattices.
+E4 source topics: prefer unused development arguments, permit reuse as v3 specifies,
+record actual reused IDs; all E1/E4 topics remain disjoint. Both stance texts are
+fixed per agent before reading group outcomes. STS/Pasch/projection checks mandatory.
+
+No v3 outcome observed when these rules were written. Stage reports distinguish
+successful execution, measurement quality, effects, uncertainty and unfinished scope.
+
+2026-10-31 pre-E1 clarification: the model-selection quantile variable is |C|,
+as explicitly specified in the proposal E4 paragraph. The earlier unqualified C
+wording was a transcription error. No E1 scores had been run or inspected when
+this correction was made. Signed C is retained in results and interpretation.
+
+2026-10-31 pre-E1/pre-E4 Monte Carlo allocation clarification: for E4b,
+100000 trajectories per design/initial condition/topic/model are stratified over
+the fixed20 mappings, 5000 trajectories per mapping. Each mapping has an
+independent seed. Within one mapping, all80 designs and measured/P0/PK methods
+share random priorities and draws. Report each mapping's means and paired MCSE;
+for averages across mappings use the independent-stratum variance sum/20^2.
+This is100000 total, not100000 per mapping. Between-mapping variability is
+reported separately. Single-round full enumerations remain unchanged. The
+allocation is frozen before E1 or E4 outcomes, based on a synthetic CPU timing
+benchmark (80designs,1000draws,6rounds,3methods:4.681sec; full100k/map about23.4
+CPUdays for the initial6model E4 panel versus1.17days for stratified100k total).
+Actual hardware runtime and optional GPU acceleration will be measured separately.
+
+2026-10-31 E0 task-pilot refinement before E1: calibration20 only freezes token
+IDs and records diagnostics; it no longer automatically rejects a remedy before
+the12-item actual-task pilot. Fixed original/T2/prefill order and formal pilot/
+development thresholds remain unchanged. All previously skipped earlier remedies
+are revisited symmetrically. See provenance/E0_taskpilot_amendment_20261031.txt;
+previous E0 selection snapshots and raw scores remain preserved.
+
+2026-10-31 final pre-E1 conditional option-mass amendment: operational admission
+is the union of the earlier q>=.70 / format>=.90 / R2>=.85 branch and a conditional
+q>=.50 / format>=.95 / R2>=.90 branch, applied symmetrically to all10 models in
+fixed remedy order on actual-task pilot12 and full100. This adaptive development
+refinement follows observed E0 quality, before any E1/E4 outcomes; its reason,
+limits, preservation rules and conditional-model disclosure are recorded in
+provenance/E0_conditional_mass_amendment_20261031.txt. Earlier protocol paragraphs
+remain as the change history; this paragraph defines the final E1 admission.
+
+2026-10-31 pre-E4 supplementary baseline extension: retain all main P0/PK/U
+analyses, additionally transfer three parameter-free E1 rules to E4 single-round
+outcomes using only local baseline/pair readouts. Selection of a single best
+rule uses E1 within-item R2 only, never E4 outcomes. See
+provenance/E4_pairwise_rule_supplement_pre_E4_20261031.txt. These additional CPU
+analyses require no new model scores and do not alter main estimands.

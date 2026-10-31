@@ -1,0 +1,74 @@
+E9 supplementary pair-position counterbalance, fixed before any E4 scoring.
+
+Motivation and evidence boundary
+After the first complete LFM E1 result and its exploratory position diagnostic,
+the actual E1 input and original renderer were inspected independently. The ten
+permutations are rotations of [A, Aprime, C, D, Dprime] and its reversal. They
+balance each role's single position but preserve each role pair's cyclic
+distance. Cyclic-adjacent fractions for OO, AA, OA are 2/3, 1, 1/3. Thus the
+contrast mOO + mAA - 2*mOA can include pair-position geometry. An independently
+checked stance-blind toy y(S)=|S|+lambda*(number of active linearly adjacent
+pairs) gives C=0.8*lambda under the old ten permutations, -0.8*lambda under the
+complementary ten affine permutations, and zero under all twenty. Purely
+additive single-position weights cancel and do not produce this confound.
+This establishes a design identification limitation, not proof that any actual
+model effect is a positional artifact. At this decision, only LFM's complete
+E1 outcomes had been inspected; Qwen4 E1 was still scoring. No E4 outcomes exist.
+
+Preserved main study
+The running E1/E2 inputs, thresholds, model/remedy decisions, primary analyses,
+original |C| model-selection rule, and primary E4 P0/PK definitions stay fixed.
+This standalone supplement does not overwrite execution_protocol.txt or change
+any inference, loader, calibration token, batch, precision or backend setting.
+It is an adaptive E9 measurement diagnostic, not a newly preregistered fresh180
+confirmation, and is reported alongside the original results.
+
+Fixed additional inputs
+Use exactly the already fixed twenty confirmation-entry items, identified by
+data/core_data_manifest.json reused20_ids, all contained in the semantic64 set.
+For slot s in 0..4, define order[s] = ROLES[(a*s+b) mod5]. The original ten are
+the a=1,4 subgroup (possibly a different ordering of b); add a=2,3, b=0..4.
+Validate that the combined twenty send every ordered pair of distinct roles
+to each of the twenty ordered distinct slot pairs exactly once.
+Score only the ten two-person masks under the ten new permutations and two
+option-label maps: 20 items * 10 pairs * 10 permutations * 2 labels = 4000
+new physical rows per model. Render exactly the original task semantics, with
+only participant assignment changing. Give new rows distinct IDs/permutations.
+
+Baseline and singleton reuse
+Empty prompts are identical across permutations. For each role and label,
+the old-ten and new-ten singleton prompt multisets are exactly equal: each
+slot occurs twice. Verify complete message/candidate hashes, not just counts.
+Reuse the original empty and singleton means from the same checkpoint, frozen
+calibration/remedy, batch16/backend and readout. Logical reuse adds no independent
+observations. The mean-absolute-singleton denominator therefore stays identical.
+Use original duplicate-score means, not a favored duplicate or new token sample.
+
+Panel and execution
+Apply to all original ten models without selecting by C direction or size.
+Nine operational R0 models receive R0_R1 scores; the R1-only Qwen0.8 receives
+R1 only and remains exploratory/ineligible for primary E4. Require closed
+original E1 data. Execute after the main E2/prerequisite stage and before E4,
+inside screen using the shared GPU lease. No new model downloads or API calls.
+Original raw scores and all earlier analyses are retained.
+
+Analysis
+For the same twenty items report original-ten, complementary-ten, and equally
+weighted balanced-twenty C and all three standardized relation kernels. Use
+the unchanged original empty/singleton means in both branches. Validate C also
+by the direct two-person y contrast, in which alpha and singletons cancel.
+Use10000 paired topic-cluster bootstrap resamples, sharing topic weights across
+permutation panels and readouts; report new-old and balanced-old differences.
+Readout comparisons use identical twenty items, never 180-versus20 or64-versus20.
+Retain undefined and negative results. These intervals are exploratory and not
+familywise multiplicity-corrected. No higher-order/full32 rule R2 claim is made
+from these low-order supplementary measurements.
+
+Interpretation
+Balanced twenty equalizes all pair positions, including pair distances, across
+relation classes. A changed C diagnoses dependence on the original positional
+sampling; it alone does not identify an internal attention mechanism or show
+that every higher-order effect disappears. An unchanged C supports robustness
+to this particular positional explanation. Neither result alters admission or
+the prespecified E4 six-model selection. Primary E4 uses the same slot policy
+for every design, so its within-experiment contrasts remain comparable.

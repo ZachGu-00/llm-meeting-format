@@ -1,0 +1,335 @@
+{
+  "schema": "voices_v3_completion_audit_map_v1",
+  "purpose": "Final goal evidence checklist only; no experiment completion is asserted by this audit.",
+  "audit_date": "2026-10-31",
+  "audit_scope": "Read-only proposal/protocol/report/controller review; no SSH, GPU, API, tests or scientific-code changes.",
+  "experiment_root": "experiments/voices_nonadditivity_v3_20261030",
+  "actual_results_validated": false,
+  "status": "requirements_mapped_with_H3_completion_gap",
+  "current_final_verification": "pending_actual_closed_outputs_and_local_delivery",
+  "sources": [
+    {
+      "path": "../../LLM 同伴影响的非加性聚合：研究计划（v3）.md",
+      "relevant_lines": [
+        30,
+        45,
+        63,
+        90,
+        98,
+        108,
+        110,
+        111,
+        151,
+        227,
+        231,
+        232,
+        233,
+        275
+      ]
+    },
+    {
+      "path": "execution_protocol.txt",
+      "relevant_lines": [
+        3,
+        4,
+        5,
+        8,
+        12,
+        44,
+        56,
+        60,
+        75,
+        78,
+        81,
+        97,
+        119,
+        127
+      ]
+    },
+    {
+      "path": "provenance/E0_taskpilot_amendment_20261031.txt"
+    },
+    {
+      "path": "provenance/E0_conditional_mass_amendment_20261031.txt"
+    },
+    {
+      "path": "provenance/E4_pairwise_rule_supplement_pre_E4_20261031.txt"
+    },
+    {
+      "path": "provenance/E9_affine_pair_balance_20261031.txt"
+    },
+    {
+      "path": "code/write_prerequisite_report_v3.py",
+      "relevant_lines": [
+        51,
+        72,
+        102,
+        196,
+        206,
+        209
+      ]
+    },
+    {
+      "path": "code/write_e4_report_v3.py",
+      "relevant_lines": [
+        112,
+        128,
+        195,
+        265,
+        272,
+        282,
+        290
+      ]
+    },
+    {
+      "path": "setup/run_e4_phase_v3.py",
+      "relevant_lines": [
+        42,
+        117,
+        130,
+        155,
+        168,
+        290,
+        302
+      ]
+    },
+    {
+      "path": "setup/run_after_prerequisite_v3.py",
+      "relevant_lines": [
+        252,
+        263
+      ]
+    },
+    {
+      "path": "code/aggregate_e4_v3.py",
+      "relevant_lines": [
+        127,
+        155,
+        305,
+        312,
+        324,
+        329
+      ]
+    },
+    {
+      "path": "../voices_nonadditivity_v2_20261030/design_source_v2.md",
+      "relevant_lines": [
+        463,
+        471
+      ]
+    },
+    {
+      "path": "provenance/E4_H3_operationalization_20261031.txt"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "E0",
+      "required": true,
+      "scope": "Initial requested ten small models: fixed calibration/remedy/option IDs, full development100 R0/R1 and quality diagnostics; retain R1-only/conditional-admission flags.",
+      "evidence": [
+        "results/<slug>/e0/e0_driver_state.json selected_analysis and selected calibration references",
+        "selected E0 development raw .jsonl + .run.json + .summary.json + selected conditional analysis",
+        "prerequisite report counts.E0_verified=counts.requested_models=10 and per-model source verification"
+      ],
+      "completion_verification": "pending_final_artifact_check",
+      "notes": "Operational eligibility is the frozen union policy, not an effect-sign or significance condition."
+    },
+    {
+      "id": "E1",
+      "required": true,
+      "scope": "Nine R0-operational models: full200 R0 and semantic64 R1; R1-only model: semantic64 R1 exploratory. Qwen4/LFM primary fresh180 and matched44; other primary200 and matched64.",
+      "evidence": [
+        "results/<slug>/e1/holdout200_R0.jsonl + closed sidecars (when R0 operational)",
+        "results/<slug>/e1/semantic64_R1.jsonl + closed sidecars",
+        "results/<slug>/e1/*_analysis.json with full32 Mobius, C, four zero-fit rules, count curves, topic bootstrap",
+        "confirmatory180_R0_analysis.json and matched44_R0_analysis.json/matched44_R1_analysis.json for Qwen4/LFM",
+        "prerequisite report E1_verified=10; H1 fixed Qwen/LFM family with Holm; readout diagnostic retained"
+      ],
+      "completion_verification": "pending_final_artifact_check"
+    },
+    {
+      "id": "E2",
+      "required": true,
+      "scope": "Each R0-operational requested model, same64 items, all E2a-e; R1-only explicit not-applicable.",
+      "evidence": [
+        "results/<slug>/e2/e2a_R0.jsonl through e2e_R0.jsonl + closed sidecars",
+        "e2a_neutral0_R0_analysis.json through e2a_neutral3_R0_analysis.json; e2b/e2c/e2d/e2e_R0_analysis.json",
+        "explicit paired E1/E2 diagnostic JSON+MD supplied in prerequisite report",
+        "prerequisite report E2_verified + E2_not_applicable_R1_only = 10, with nine complete paired reports under the current panel"
+      ],
+      "completion_verification": "pending_final_artifact_check",
+      "notes": "E2a low-order16 subsets at neutral0..3; b/c full32; d 4x3 and e 7x4 counts, with nine slots for e. Counts are not named-member C. Paired10000 topic draws; old models additionally fresh44 sensitivity. Undefined power exponents retained."
+    },
+    {
+      "id": "E3",
+      "required": false,
+      "scope": "D2 factual kernel explicitly skipped by user.",
+      "evidence": [
+        "prerequisite report E3.status=skipped_by_user and counts_as_passed=false"
+      ],
+      "completion_verification": "verify_explicit_skip_label_only"
+    },
+    {
+      "id": "prerequisite_local_delivery",
+      "required": true,
+      "scope": "Deliver E0/E1/E2 report plus explicit E3 skip before E9/E4.",
+      "evidence": [
+        "complete_verified_for_requested_scope prerequisite JSON + MD, covering initial ten models",
+        "frozen six-model E4 selection JSON with panel/source hashes; prerequisite E4_selection.verified_frozen=true",
+        "project-root voices_v3_E0_E3_阶段报告.md/.json + SHA-verified local-delivery receipt"
+      ],
+      "completion_verification": "pending_final_artifact_check",
+      "notes": "Prerequisite complete is scoped to E0/E1/E2; it alone does not assert E4 selection or E4 completion. The phase separately checks the explicit matching frozen selection."
+    },
+    {
+      "id": "E9_affine_supplement",
+      "required": true,
+      "scope": "Authorized adaptive low-order pair-position diagnostic on fixed old20, all initial ten models, before E4; not full proposal E9.",
+      "evidence": [
+        "explicit setup/e9_affine_queue_history/<stamp>/plan.json and final_status.json",
+        "results/<slug>/e9_affinepair/e9_affinepair.jsonl + closed sidecars; nine R0_R1 and one R1-only",
+        "same history/model_analysis/<slug>/E9_affine_pairs.json/.md/_bootstrap.npz for all ten",
+        "reports/E9_affine_all10_20261031.json/.md with complete_requested_diagnostic_panel and ten verified models",
+        "after_prerequisite exact-history E9_complete receipt and closed local E9 backup"
+      ],
+      "completion_verification": "pending_final_artifact_check",
+      "notes": "Report old10/new10/balanced20 C and three kernels with paired topic bootstrap; do not replace E1, model selection or primary E4 kernels."
+    },
+    {
+      "id": "E4_cache_panel",
+      "required": true,
+      "scope": "Frozen six models x exact six manifest topics; 49020 native R0 measurements per model/topic, total36 closed cache jobs.",
+      "evidence": [
+        "explicit setup/e4_score_queue_history/<stamp>/plan.json and final_status.json with all_requested_scores_complete and36 complete jobs",
+        "results/<slug>/e4_cache/<topic_id>_R0.jsonl + run/summary sidecars",
+        "data/e4_cache_manifest.json and authoritative STS15 dataset/projection-validation sources",
+        "exact score history/analysis_watcher_status.json with all36 points and all6 model summaries closed"
+      ],
+      "completion_verification": "pending_final_artifact_check"
+    },
+    {
+      "id": "E4a_single_round",
+      "required": true,
+      "scope": "Six-agent Pasch pair; m2/3, tau +/-1, all initial placements =70 conditions per topic/model.",
+      "evidence": [
+        "results/<slug>/e4_analysis/<score_stamp>/<topic_id>/<topic_id>_E4_analysis.json:E4a and bound *_caches.npz",
+        "score history/cpu_model_summaries/<slug>/single_round_aggregate.json:single_round.E4a and bound bootstrap NPZ"
+      ],
+      "completion_verification": "pending_final_artifact_check"
+    },
+    {
+      "id": "E4b_single_round",
+      "required": true,
+      "scope": "80 nonisomorphic STS15 x20 shared mappings x m3/5/7 and tau +/-1 = six configurations per topic/model.",
+      "evidence": [
+        "per-topic *_E4_analysis.json:E4b outcomes_mapping_by_system and within_mapping_metrics",
+        "six-topic single_round_aggregate.json:single_round.E4b metrics/topic_sufficient_statistics/leave_one_topic_out",
+        "per-topic within_mapping_metrics retain spread, rank correlation, sign accuracy, regret; supplementary report supplies paired conditional rule-comparison intervals"
+      ],
+      "completion_verification": "pending_final_artifact_check",
+      "notes": "Contrast designs within each common mapping/configuration before averaging; do not substitute mapping-averaged signed design differences."
+    },
+    {
+      "id": "E4c_single_round",
+      "required": true,
+      "scope": "Three five-agent sets x32 states x two tau orientations =192 records per topic/model; repeated5-person vs all10 triples, each pair co-occurs3 times.",
+      "evidence": [
+        "per-topic *_E4_analysis.json:E4c and bound five-person cache",
+        "six-topic single_round_aggregate.json:single_round.E4c"
+      ],
+      "completion_verification": "pending_final_artifact_check",
+      "notes": "PK is explicitly pair-truncated; no invented unmeasured higher-order kernel."
+    },
+    {
+      "id": "E4_stronger_rule_supplement",
+      "required": true,
+      "scope": "All E4a/b/c single-round outcomes, three added no-fit rules plus additive, and preselected E1-best rule.",
+      "evidence": [
+        "score history/cpu_model_summaries/<slug>/pairwise_rule_supplement.json/.md/_outcomes_and_bootstrap.npz for six models",
+        "E1-best rule source binding; all methods use exactly primary states/mappings/caches"
+      ],
+      "completion_verification": "pending_final_artifact_check",
+      "notes": "No E4 fitting; conditional10000-topic intervals. PK beating P0 does not prove every pairwise-informed algorithm fails."
+    },
+    {
+      "id": "E4_dynamics",
+      "required": true,
+      "scope": "All six models x six topics; E4a and E4b, rounds1..6 including planned2..6, measured/P0/PK.",
+      "evidence": [
+        "exact setup/e4_dynamics_queue_history/<stamp>/plan.json and final_status.json with36 closed jobs",
+        "per-topic *_E4_dynamics.json plus190 closed parts (70 G6 conditions +120 STS mapping/config strata)",
+        "same history/optional_aggregates/<slug>_E4_with_dynamics.json and bound bootstrap NPZ for all six",
+        "E4a100000 trajectories/design/condition; E4b100000 total/design/config/topic split20 independent mappings x5000 each; paired MCSE"
+      ],
+      "completion_verification": "pending_final_artifact_check",
+      "notes": "Six-topic intervals conditional on fixed E1 kernels; simulation MCSE reported separately; no claim of dynamic E1 propagation or free dialogue."
+    },
+    {
+      "id": "E4_H3_cross_model",
+      "required": true,
+      "scope": "Six selected models: association of E1 absolute C with E4 P0 residual measure, with small-panel and model-selection limits.",
+      "evidence": [
+        "NO IMPLEMENTED FINAL OUTPUT OR COMPLETION GATE FOUND IN AUDITED FILES",
+        "Reusable: E1 primary point.C, item_C_numerators, item_C_denominators, topics",
+        "Reusable: aggregate.single_round.E4b.topic_sufficient_statistics.{P0_mean_square_error,observed_mean_square_contrast}; metrics.P0_unexplained_fraction_U and P0_residual_RMS"
+      ],
+      "completion_verification": "pending_standalone_summary_and_completion_integration",
+      "notes": "Proposal line110/v2section8 use normalized residual fraction, but v3 appendix275 also calls signed pair residual U. Minimal compatible proposed primary is E4b single-round fraction: ratio of equal-topic mean squared error to mean squared contrast; residual RMS is a separately labelled sensitivity. Root authorized the separate pre-E4 clarification in provenance/E4_H3_operationalization_20261031.txt; implementation and final artifact verification remain pending. Shared E1/E4 topic bootstrap across models, separate E1/E4 weights,10000 draws; six-model leave-one-out sensitivity. Do not concatenate unrelated per-model bootstrap rows. A single primary correlation is not six hypothesis tests; any additional primary family must be specified explicitly."
+    },
+    {
+      "id": "E4_local_delivery_and_goal_close",
+      "required": true,
+      "scope": "Verified complete six-model E4 core + stronger baseline + dynamics + H3 supplement, delivered locally; completion need not imply positive effects.",
+      "evidence": [
+        "exact E4 phase history/status.json and final_status.json status complete_E4_scope and bound report JSON/MD",
+        "report counts: six selected, six single_round, six supplement, six dynamics; no input errors",
+        "separate H3 supplement and final goal check (missing in present phase complete gate)",
+        "project-root voices_v3_E4_阶段报告.md/.json and source-SHA-verified local backup receipt; E9 report archived separately"
+      ],
+      "completion_verification": "pending_final_artifact_check"
+    }
+  ],
+  "out_of_scope": [
+    {
+      "id": "E4d",
+      "reason": "Optional STS27; not part of frozen initial scope."
+    },
+    {
+      "id": "E5",
+      "reason": "Deferred with explicitly skipped E3; no factual group accuracy claim."
+    },
+    {
+      "id": "E6_E7_E8",
+      "reason": "Later conditional extensions/free conversation/manipulation/mechanisms; frozen initial scope does not claim them complete."
+    },
+    {
+      "id": "full_E9",
+      "reason": "Template/R2/full robustness grid not part of initial goal; required affine supplement and performed numerical diagnostics must not be described as full E9."
+    },
+    {
+      "id": "A1_A2",
+      "reason": "Optional D3 and human experiments."
+    },
+    {
+      "id": "larger_and_training_stage_panels",
+      "reason": "7-14B, OLMo stages and broader original proposal panels explicitly deferred; initial ten may expand only if six E4 eligible models unavailable."
+    }
+  ],
+  "audit_findings": [
+    {
+      "severity": "completion_gap",
+      "id": "H3",
+      "finding": "Current E4 report/phase may close all per-model core outputs without a cross-model H3 result. Add a separate bound CPU summary and include it in the final goal checklist; no new inference needed."
+    },
+    {
+      "severity": "scope_clarification",
+      "id": "U_symbol",
+      "finding": "Do not silently equate signed pair residual, residual RMS and normalized unexplained fraction; proposal and earlier definition reuse U for different quantities."
+    },
+    {
+      "severity": "no_other_material_omission_found",
+      "finding": "Audited E0/E1/E2, E4a/b/c, six-model-six-topic dynamics and stronger-rule scopes have explicit artifact closure requirements. E3 skip and later-stage exclusions are explicit. No changes to running E1, frozen science or current queues are required by this audit."
+    }
+  ]
+}

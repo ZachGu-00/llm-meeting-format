@@ -1,0 +1,15 @@
+{
+  "status": "selected",
+  "selected_utc_date": "2026-10-31",
+  "batch_size": 16,
+  "attn_implementation": "eager",
+  "precision": "bfloat16_with_official_native_fp32_exceptions",
+  "backend": "official_transformers_native_optional_kernels",
+  "inference_sha256": "0ec5d9170485ca941249f9557986b6dfe7f7c2a62426ad9088bdf4c868e1b13c",
+  "loader_sha256": "d69b16aac26858479330494ec0f6d5f77bf9c5a6dabf15d435337132ff4f3645",
+  "versions": {"torch": "2.14.1+cu132", "transformers": "5.22.0", "triton": "3.8.0", "causal-conv1d": "1.7.0", "fla-core": "0.6.0", "flash-linear-attention": "0.6.0"},
+  "evidence": ["results/LiquidAI--LFM2.5-1.2B-Instruct/numeric_pilot/batch_comparison.json", "results/Qwen--Qwen3.5-4B/numeric_pilot/batch_comparison.json", "results/LiquidAI--LFM2.5-1.2B-Instruct/numeric_accelerated/backend_comparison.json", "results/Qwen--Qwen3.5-4B/numeric_accelerated/backend_comparison.json"],
+  "rationale": "Batch16 improved throughput 1.62-1.90x in reference pilots with primary metric changes below0.02. Optional native backend leaves LFM readouts identical; Qwen adds1.435x speedup, preserves perfect format and increases R2 concordance .98 to .995. Qwen backend R0 primary maxchange .01642 and R1 maxchange .03421. Pilot does not establish exact numeric equivalence; small near-zero effects require sensitivity checks. Decision made before formal E0 and any E1 outcomes, based on throughput and measurement stability, not desired scientific direction.",
+  "limitations": "BF16 per-row differences remain: Qwen R0 max1.25 and mean .0854 versus same-batch reference. Do not pool backends or prior20 confirmatory results. Re-score all inputs consistently; old20 remain excluded from Qwen/LFM confirmatory tests. E9 reference backend/batch sensitivity remains outstanding.",
+  "scope": "common fixed configuration for initial10 models; runtime errors repaired explicitly, never treated as model noncompliance"
+}

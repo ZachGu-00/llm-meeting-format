@@ -1,0 +1,118 @@
+{
+  "schema": "voices_v3_cloud_handoff_v1",
+  "recorded_utc": "2026-10-31T15:58:55.572172+00:00",
+  "goal_status": "paused_by_user",
+  "requested_action": "Prepare cloud handoff; do not resume until explicit user instruction in the receiving session.",
+  "server": {
+    "host": "157.107.19.62",
+    "port": 16675,
+    "user": "root",
+    "root": "/workspace/voices_nonadditivity_v3",
+    "python": "/venv/main/bin/python",
+    "screen": "51691.voices_after_prereq_4ead1b9b7985"
+  },
+  "complete": {
+    "E0_models": 10,
+    "E1_models": 10,
+    "E2_models": 9,
+    "E3": "skipped_as_requested",
+    "E9_affine_models": 10
+  },
+  "E4": {
+    "complete": false,
+    "completed_model_topic_jobs": 0,
+    "planned_model_topic_jobs": 36,
+    "planned_models": 6,
+    "planned_topics_per_model": 6,
+    "partial_model": "Qwen/Qwen3.5-4B",
+    "partial_topic": "V3_E4_TOPIC_01",
+    "partial_rows": 12000,
+    "topic_total_rows": 49020,
+    "all_models_total_rows": 1764720,
+    "pause": {
+      "schema": "voices_v3_user_pause_v1",
+      "status": "paused_processes_verified",
+      "utc": "2026-10-31T15:51:27.300160+00:00",
+      "reason": "User explicitly paused at E4 for cleanup and Codex cloud handoff on the same GPU server.",
+      "processes": [
+        {
+          "pid": 51692,
+          "script": "run_after_prerequisite_v3.py",
+          "state": "T"
+        },
+        {
+          "pid": 53774,
+          "script": "run_e4_phase_v3.py",
+          "state": "T"
+        },
+        {
+          "pid": 53798,
+          "script": "run_e4_score_queue.py",
+          "state": "T"
+        },
+        {
+          "pid": 53824,
+          "script": "run_e4_analysis_watcher_v3.py",
+          "state": "T"
+        },
+        {
+          "pid": 53825,
+          "script": "inference_v3.py",
+          "state": "T"
+        }
+      ],
+      "screen": "51691.voices_after_prereq_4ead1b9b7985",
+      "score_plan": "/workspace/voices_nonadditivity_v3/setup/e4_score_queue_history/20261031T154754913456Z/plan.json",
+      "score_plan_sha256": "901f684ded0ab62b8bb97994ff44d61bfe4c9525b411f361e6fd95719a16b437",
+      "phase_history": "/workspace/voices_nonadditivity_v3/setup/e4_phase_history/20261031T154746533366Z",
+      "E4_complete": false,
+      "partial_output": "/workspace/voices_nonadditivity_v3/results/Qwen--Qwen3.5-4B/e4_cache/V3_E4_TOPIC_01_R0.jsonl",
+      "partial_bytes": 36540877,
+      "complete_lines": 12000,
+      "method": "SIGSTOP; explicit user resume required before SIGCONT; maintain current server"
+    },
+    "phase_status": "/workspace/voices_nonadditivity_v3/setup/e4_phase_status.json",
+    "bridge_status": "/workspace/voices_nonadditivity_v3/setup/after_prerequisite_status.json",
+    "score_plan": "/workspace/voices_nonadditivity_v3/setup/e4_score_queue_history/20261031T154754913456Z/plan.json",
+    "score_plan_sha256": "901f684ded0ab62b8bb97994ff44d61bfe4c9525b411f361e6fd95719a16b437"
+  },
+  "cleanup": {
+    "deleted_weight_bytes": 20143640152,
+    "free_bytes_after_cleanup": 35935371264,
+    "removed_model_weights": [
+      "HuggingFaceTB/SmolLM3-3B",
+      "Qwen/Qwen3.5-0.8B",
+      "Qwen/Qwen3.5-2B",
+      "mistralai/Ministral-3-3B-Instruct-2512-BF16"
+    ],
+    "all_metadata_and_results_preserved": true
+  },
+  "frozen_selected_models": [
+    "Qwen/Qwen3.5-4B",
+    "LiquidAI/LFM2.5-1.2B-Instruct",
+    "ibm-granite/granite-4.2-3b",
+    "openbmb/MiniCPM5-2B",
+    "google/gemma-4-E2B-it",
+    "microsoft/Phi-4-mini-instruct"
+  ],
+  "runtime": "native BF16, eager, batch16; do not change frozen inference configuration",
+  "backup_state": "Windows helpers stopped after verified E0-E2, affine E9 and paused E4 backups. Cloud takeover must arrange ongoing retrieval; GPU server retains complete source/results.",
+  "E9_backup": {
+    "remote_archive": "/workspace/voices_nonadditivity_v3/setup/backup_archives/20261031T154831698809Z_E9_all10_all_.tar.gz",
+    "sha256": "76777c4fec374d1d5f274947803f9a0b44bae8e042df9a5366b4e53cfc884840",
+    "bytes": 80826664
+  },
+  "pause_backup": {
+    "remote_archive": "/workspace/voices_nonadditivity_v3/setup/backup_archives/paused_E4_handoff_20261031.tar.gz",
+    "sha256": "f325f92f54afac680fe04f11b454764e2e2d9e2293dca488ff5b6f6c8dd4be1f",
+    "bytes": 3370550
+  },
+  "completion_requirements": [
+    "six models x six topics E4a/b/c single round",
+    "E4a/b six-round Monte Carlo with registered100000draws",
+    "H3 cross-model analysis",
+    "E4 full report and source-bound artifact backup",
+    "no model-self-reported probabilities",
+    "E4d optional; E5-E8 and fullE9 outside current core completion"
+  ]
+}
