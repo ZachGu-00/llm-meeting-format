@@ -1,0 +1,7 @@
+﻿test,component,estimate,ci_lo,ci_hi,Holm_p,passed_R0_family,R1_matched_direction,source
+H2a_positive_U,H2a_positive_U,5.661702542470477e-05,4.349688127876589e-05,6.929149333128404e-05,0.0004999500049995,True,True,historical/analysis_results/Gate2/report.json
+H2a_below_10pct,H2a_below_10pct,0.495849275571336,0.37411839262747015,0.6393301164774767,1.0,False,False,historical/analysis_results/Gate2/report.json
+H4_E1_aligned_n3,H4_E1_aligned_n3,0.0022006583728464086,0.00046075088496215684,0.0038447788294722197,0.0187981201879812,True,True,historical/analysis_results/Gate2/report.json
+H5_content_gain,H5_E1,0.013647227349189479,-0.06532423632747147,0.09247182378360684,1.0,False,True,historical/analysis_results/Gate2/report.json
+H5_content_gain,H5_matched,-0.02330346192418719,-0.04583396407883528,-0.003556648928701387,1.0,False,True,historical/analysis_results/Gate2/report.json
+H3prime_direction,H3prime_direction,7/11,,,0.8232421875,False,,historical/analysis_results/Gate2/report.json

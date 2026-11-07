@@ -1,4 +1,8 @@
-# Voices / Arguments v3 — Codex 云端接管
+# Voices / Arguments v3
+
+当前论文的代码整理版见 [v1_experiment](v1_experiment/README.md)。该目录提供离线分析入口、冻结源代码和简短运行说明。
+
+## 历史云端接管记录
 
 **实验已按用户要求暂停在 E4 开始阶段。** 本仓库用于接管同一台 GPU 服务器；环境初始化不会恢复实验。
 

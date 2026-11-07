@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-06T14:46:29.773531+00:00",
+  "status": "PASS",
+  "figure_source_csvs": 20,
+  "exported_rows_including_overlapping_summaries": 371057,
+  "matched_pair_projection": "exactly_equal",
+  "moved_dyadic_exposures_each_side": 60,
+  "reconstructed_conditions": 15552,
+  "max_jensen_identity_error": 1.1102230246251565e-16,
+  "matched_condition_rows_reconciled": 311040,
+  "matched_topic_second_moments_reconciled": 648,
+  "max_simple_mean_static_contrast": 5.551115123125784e-17,
+  "max_simple_mean_jensen_identity_error": 1.0061396160665481e-16,
+  "contrast_scores_recomputed": 30,
+  "original_runs": 864,
+  "replication_runs": 288,
+  "G4_prediction_identity": "E1_relation_kernel_not_E2_size_weights",
+  "validation_scope": "numerical source data; no rendered figures required",
+  "new_model_inference": false,
+  "inference_status": "exploratory; pointwise intervals; topic clusters; fixed models"
+}

@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "copied_sources_and_reference_files_sha256_verified": 105,
+  "python_files_syntax_checked": 94,
+  "writing_tables_rebuilt_with_identical_values": 9,
+  "reconstructed_cache_jobs": 162,
+  "auxiliary_conditions_reconstructed": 15552,
+  "matched_configurations_validated": 311040,
+  "main_predictor_scores_recomputed": 30,
+  "sample_G2_cache_task_topic_records_matched": 70,
+  "new_model_inference": false,
+  "validation_data": "External paper_data copy; not included in Git"
+}
