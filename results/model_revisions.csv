@@ -1,0 +1,12 @@
+model,repository,revision,role
+SmolLM3-3B,HuggingFaceTB/SmolLM3-3B,a07cc9a04f16550a088caea529712d1d335b0ac1,micro; earlier topics
+LFM2.5-1.2B,LiquidAI/LFM2.5-1.2B-Instruct,0f604ada3f766f9f257460c4c9f0b5d6f69d431b,main + micro
+Qwen3.5-2B,Qwen/Qwen3.5-2B,15852e8c16360a2fea060d615a32b45270f8a8fc,micro; earlier topics
+Qwen3.5-4B,Qwen/Qwen3.5-4B,851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a,main + micro
+Gemma4-E2B,google/gemma-4-E2B-it,3e22461f65e89153144f8adb70e3b8c2cc9845a7,main + micro
+Gemma4-E4B,google/gemma-4-E4B-it,ee0ef6023621cff504d758262d4e04895a5af4a2,micro; earlier topics
+Granite4.2-3B,ibm-granite/granite-4.2-3b,4e9c275e232f10211ec88644d106a1f6a1b60e06,main + micro
+Phi4-mini,microsoft/Phi-4-mini-instruct,cfbefacb99257ffa30c83adab238a50856ac3083,main + micro
+Ministral3-3B,mistralai/Ministral-3-3B-Instruct-2512-BF16,b6d637bef2393152b3da2b2fde72eecdee30557e,micro; earlier topics
+Nemotron3-Nano-4B,nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16,dfaf35de3e30f1867dd8dbc38a7fc9fb52d3914f,micro; earlier topics
+MiniCPM5-2B,openbmb/MiniCPM5-2B,f97400052a43d642bbc6e9975e2397e3ae6a6b52,main + micro

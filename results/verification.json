@@ -1,0 +1,40 @@
+{
+  "auxiliary_conditions": 15552,
+  "max_jensen_identity_error": 1.942890293094024e-16,
+  "max_mean_network_contrast": 5.551115123125784e-17,
+  "dispersion_gap_log_log_correlation": 0.9715561044419813,
+  "matched_configurations": 311040,
+  "main_configurations": 161280,
+  "resize_minus_regroup_pp": 1.7738703223332108,
+  "resize_minus_regroup_ci": [
+    1.500156471676828,
+    2.034304949323856
+  ],
+  "majority_amplification_pp": 1.7177365984792945,
+  "main_predictor_scores": 60,
+  "new_model_inference": false,
+  "analysis": "Exploratory; 20000 topic-cluster draws; six fixed main models.",
+  "pair_contacts_equal": true,
+  "moved_dyadic_exposures_each_side": 60,
+  "meeting_counts": {
+    "base": 40,
+    "regroup": 40,
+    "resize": 26
+  },
+  "manuscript_tables_matched": [
+    "format_effects",
+    "models",
+    "scope_checks",
+    "predictor_scores",
+    "weight_comparisons",
+    "size_weights",
+    "majority_shifts",
+    "auxiliary_averaging",
+    "micro_summary"
+  ],
+  "cache_jobs_checked": 162,
+  "cached_configurations_checked": 311040,
+  "max_cached_prediction_error": 1.0347625534201654e-15,
+  "jensen_bound_max_positive_excess": 0.0,
+  "status": "PASS"
+}

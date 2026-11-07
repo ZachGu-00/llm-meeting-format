@@ -1,39 +1,54 @@
-# Voices / Arguments v3
+# LLM Meeting Format
 
-当前论文的代码整理版见 [v1_experiment](v1_experiment/README.md)。该目录提供离线分析入口、冻结源代码和简短运行说明。
+Code and results for **Same Contacts, Different Rooms: Meeting Format Shapes LLM Group Influence Beyond Pairwise Contact Counts**.
 
-## 历史云端接管记录
+The paper tests what changes when the same members and pairwise contact counts are organised into different meetings. **Regroup** changes who meets in triads. **Resize** merges triads into five-person meetings. Both interventions move the same 60 dyadic exposures.
 
-**实验已按用户要求暂停在 E4 开始阶段。** 本仓库用于接管同一台 GPU 服务器；环境初始化不会恢复实验。
+Across six fixed models and 14 topics, resize changes one-step group support more than regroup: **4.36 versus 2.59 percentage points RMS**, a difference of **1.77 [1.50, 2.03]**, with resize larger in **81 of 84** model-topic cells. Resize also amplifies the initial core majority by **1.72 [1.41, 2.02] percentage points**.
 
-先读 [当前结果与暂停位置](reports/PAUSE_SUMMARY.md)，再读 [Codex 环境配置](docs/CLOUD_SETUP.md)。完整状态见 [STATE.json](handoff/STATE.json)。
+Five pairwise predictors separate the form of influence weights from their aggregation placement: **Sum, Mean, Size, Stance, and Static network**. Their accuracy differs across models; negative scores are retained. With identical Size weights, meeting-wise computation improves resize R² over the static network by **0.51 for Granite4.2-3B** and **0.58 for LFM2.5-1.2B**. The placement difference is a sigmoid Jensen gap bounded by within-member logit variance.
 
-- GPU：RTX PRO 5000 / 48 GB；服务器目录 `/workspace/voices_nonadditivity_v3`。
-- E0/E1：各 10 个模型完成；E2：9 个适用模型完成；E3：按要求跳过。
-- 补充位置平衡检查：10 个模型完成。
-- E4：6 模型 × 6 议题；目前 0/36 个完整任务，第一个任务已写入 12,000/49,020 行。
-- 原来的五个进程保留在 screen 中，以 SIGSTOP 暂停。服务器需要保持运行。
-- 已删除四个非 E4 模型共 20.14 GB 权重；元数据、数据、结果和所选六模型全部保留。
+## Repository
 
-创建环境时选择本仓库。设置 Secret `VOICES_SSH_PRIVATE_KEY`，Setup script 填 `bash cloud/setup.sh`。开启所需网络访问后，先运行：
-
-```bash
-python3 cloud/control.py status
+```text
+src/llm_meeting_format/
+  design.py          Contact-matched schedules
+  predictors.py      Weight fitting and aggregation
+  statistics.py      Topic bootstrap and contrast scores
+  analysis.py        Paper estimates and robustness checks
+  paper_tables.py    Manuscript table export and comparison
+  validation.py      Reconstruction from cached measurements
+scripts/reproduce.py Analysis entry point
+results/             Current estimates, tables, and verification
+data/                External measurement requirements and checksums
+tests/               Scientific invariant checks
 ```
 
-只有用户明确要求继续后，才执行：
+## Reproduce
+
+Use Python 3.11 or later. The pinned packages match the checked analysis environment.
 
 ```bash
-python3 cloud/control.py resume --confirm-resume
+python -m pip install -r requirements.txt
+python -m unittest discover -s tests
+python scripts/reproduce.py --data-root /path/to/paper_data --output results
 ```
 
-获取阶段报告：
+The frozen measurements are external to this repository; see [data requirements](data/README.md). A clean clone provides the analysis code and result tables, but does not include the full measurement dataset or model checkpoints.
+
+For reconstruction from all cached tensors and an exact comparison with the manuscript tables:
 
 ```bash
-python3 cloud/control.py fetch-reports
+python scripts/reproduce.py --data-root /path/to/paper_data --output results \
+  --check-caches --manuscript /path/to/manuscript_source
 ```
 
-该命令只下载报告，不等同于完整原始数据备份。接管后的完整任务和备份要求见 `AGENTS.md`。
+The script writes only to the output directory. It does not run LLM inference, call an API, or modify the frozen inputs. The optional cache check reconstructs 311,040 configurations across 162 model-topic-readout jobs. The main analysis uses 161,280 configurations; the remainder support the scope checks. The auxiliary averaging analysis covers 15,552 conditions.
 
-`experiment/` 为运行代码的精确快照，`reports/` 为已完成阶段结果，`handoff/` 为冻结计划、暂停和清理记录。模型、原始大文件和凭证均未上传。不要用此仓库覆盖正在暂停的服务器工作目录。
+## Scope
 
+This is an exploratory analysis of saved measurements. Percentile 95% intervals use 20,000 topic-cluster bootstrap draws and seed 20261105. Models are fixed, and pooled intervals resample topics jointly across models. Two-topic full-answer likelihood checks are reported without a cluster interval.
+
+The outcomes are one-step responses from fixed initial stances. Meeting count and token cost are not held fixed. These are LLM collectives, not human groups. The repository follows the current paper's meeting-format analysis; historical experiments address separate hypotheses and are not presented as confirmations of these results.
+
+The main effects and predictor statistics are recomputed from configuration-level measurements. Size and Stance weights are refitted from the micro-experiment with the target topic excluded. Archived micro power-fit and neutral-effect intervals are carried forward from their frozen estimates. The result files describe this scope explicitly.
